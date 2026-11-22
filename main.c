@@ -10,6 +10,8 @@
 //  by a marker byte). For example, 0xFFD8 is Start of Image, 0xFFC0
 //  contains dimensions/color info, 0xFFDA is the start of the compressed
 //  image data.
+//  source:
+//  https://en.wikipedia.org/wiki/JPEG#Syntax_and_structure
 
 int main() {
 
@@ -23,7 +25,7 @@ int main() {
       stbi_load(file_name, &image_x, &image_y, &channels_in_file, STBI_rgb);
 
   int write_png =
-      stbi_write_jpg(output_name, image_x, image_y, 3, image_file, 100);
+      stbi_write_jpg(output_name, image_x, image_y, 2, image_file, 100);
 
   printf("image x: %d image y: %d\n", image_x, image_y);
   printf("image channels: %d\n", channels_in_file);
